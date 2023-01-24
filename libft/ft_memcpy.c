@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgolino <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 15:45:24 by lgolino           #+#    #+#             */
-/*   Updated: 2023/01/23 16:41:48 by lgolino          ###   ########.fr       */
+/*   Created: 2023/01/23 17:47:56 by lgolino           #+#    #+#             */
+/*   Updated: 2023/01/23 17:49:44 by lgolino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isdigit(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-		return (0);
+    size_t	i;
+
+    if (!dest && !src)
+        return (0);
+    i = 0;
+    while (i < n)
+    {
+        ((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+        i++;
+    }
+    return (dest);
 }

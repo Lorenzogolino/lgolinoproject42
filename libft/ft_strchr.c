@@ -6,9 +6,21 @@
 /*   By: lgolino <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:05:15 by lgolino           #+#    #+#             */
-/*   Updated: 2023/01/19 16:11:34 by lgolino          ###   ########.fr       */
+/*   Updated: 2023/01/23 18:11:12 by lgolino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s != '\0' && c != *s)
+	{
+		s++;
+	}
+	if (*s == c)
+	{
+		return ((char *) s);
+	}
+	return (0);
+}
