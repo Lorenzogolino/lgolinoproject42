@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgolino <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 16:36:41 by lgolino           #+#    #+#             */
-/*   Updated: 2023/01/24 12:53:30 by lgolino          ###   ########.fr       */
+/*   Created: 2023/01/24 12:31:37 by lgolino           #+#    #+#             */
+/*   Updated: 2023/01/24 12:44:30 by lgolino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_isprint(int c)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	size_t	i;
+	size_t	j;
+
+	if (dstsize <= ft_strlen(dst))
+		return (dstsize + ft_strlen(src));
+	i = ft_strlen(dst);
+	j = 0;
+	while (src[j] != '\0' && i + 1 < dstsize)
+	{
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(dst) + ft_strlen(&src[j]));
 }

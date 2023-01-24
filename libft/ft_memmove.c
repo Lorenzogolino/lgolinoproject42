@@ -6,12 +6,12 @@
 /*   By: lgolino <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 17:51:39 by lgolino           #+#    #+#             */
-/*   Updated: 2023/01/23 18:18:09 by lgolino          ###   ########.fr       */
+/*   Updated: 2023/01/24 12:54:21 by lgolino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
