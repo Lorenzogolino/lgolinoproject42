@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgolino <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 12:57:43 by lgolino           #+#    #+#             */
-/*   Updated: 2023/01/26 13:06:49 by lgolino          ###   ########.fr       */
+/*   Created: 2023/01/26 17:05:49 by lgolino           #+#    #+#             */
+/*   Updated: 2023/01/26 17:10:41 by lgolino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int			j;
-	const char	*begin;
+	size_t	i;
 
-	begin = str;
-	j = ft_strlen(str);
-	str = (str + j);
-	while (*str != *begin && c != *str)
-		str--;
-	if (c == *str)
-		return ((char *) str);
-	return (0);
+	if (!s1 || !set)
+		return (0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }
