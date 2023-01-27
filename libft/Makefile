@@ -6,7 +6,7 @@
 #    By: lgolino <lgolino@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 12:15:19 by lgolino           #+#    #+#              #
-#    Updated: 2023/01/27 12:24:19 by lgolino          ###   ########.fr        #
+#    Updated: 2023/01/27 15:22:25 by lgolino          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRC = ft_atoi.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
 	  ft_substr.c \
+	  ft_memset.c \
 	  #ft_putchar_fd.c \
 	  #ft_putendl_fd.c \
 	  #ft_putnbr_fd.c \
@@ -47,7 +48,6 @@ SRC = ft_atoi.c \
 	  #ft_strmapi.c \
 	  #ft_striteri.c \
 	  #ft_itoa.c \
-	  #ft_memset.c \
 	  
 	  
 BONUS =	ft_lstnew.c \

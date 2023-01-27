@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgolino <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lgolino <lgolino@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:10:59 by lgolino           #+#    #+#             */
-/*   Updated: 2023/01/26 17:19:08 by lgolino          ###   ########.fr       */
+/*   Updated: 2023/01/27 15:32:09 by lgolino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ static char	*copy_words(const char *str, int start, int end)
 
 	i = 0;
 	word = malloc((end - start + 1) * sizeof(char));
+	if (!word)
+		return (0);
 	while (start < end)
 	{
 		word[i] = str[start];
@@ -70,7 +72,7 @@ char	**ft_split(char const *s, char c)
 	int		j;
 
 	split = malloc((count_nbr_words(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
+	if (!split || !s)
 		return (0);
 	start = -1;
 	i = 0;
