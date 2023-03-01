@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgolino <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lgolino <lgolino@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:38:19 by lgolino           #+#    #+#             */
-/*   Updated: 2023/01/31 16:09:26 by lgolino          ###   ########.fr       */
+/*   Updated: 2023/01/31 17:22:49 by lgolino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static int	div_calc(int power)
 {
-	intet	result;
+	int	result;
 
-	result = 1
-		while (power > 1)
+	result = 1;
+	while (power > 1)
 	{
 		result *= 10;
 		power--;

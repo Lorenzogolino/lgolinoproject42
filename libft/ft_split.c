@@ -6,7 +6,7 @@
 /*   By: lgolino <lgolino@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:10:59 by lgolino           #+#    #+#             */
-/*   Updated: 2023/01/27 15:32:09 by lgolino          ###   ########.fr       */
+/*   Updated: 2023/02/01 16:16:34 by lgolino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,15 @@ char	**ft_split(char const *s, char c)
 	int		start;
 	int		j;
 
+	if (!s)
+		return (0);
 	split = malloc((count_nbr_words(s, c) + 1) * sizeof(char *));
 	if (!split || !s)
 		return (0);
 	start = -1;
-	i = 0;
+	i = -1;
 	j = 0;
-	while (i <= strlen_neg_pos(s))
+	while (++i <= strlen_neg_pos(s))
 	{
 		if (s[i] != c && start < 0)
 			start = i;
@@ -86,7 +88,6 @@ char	**ft_split(char const *s, char c)
 			split[j++] = copy_words(s, start, i);
 			start = -1;
 		}
-		i++;
 	}
 	split[j] = 0;
 	return (split);

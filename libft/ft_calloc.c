@@ -6,19 +6,23 @@
 /*   By: lgolino <lgolino@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:04:25 by lgolino           #+#    #+#             */
-/*   Updated: 2023/01/27 12:34:48 by lgolino          ###   ########.fr       */
+/*   Updated: 2023/02/04 16:45:07 by lgolino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <unistd.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t nmeb, size_t size)
 {
-	void	*dst;
+	char	*ptr;
 
-	dst = malloc(size * count);
-	if (!dst)
+	if (nmeb == SIZE_MAX && size == SIZE_MAX)
+		return (NULL);
+	ptr = malloc(nmeb * size);
+	if (!ptr)
 		return (0);
-	ft_memset(dst, 0, (size * count));
-	return (dst);
+	ft_memset(ptr, 0, (nmeb * size));
+	return (ptr);
 }

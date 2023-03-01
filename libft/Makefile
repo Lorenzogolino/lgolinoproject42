@@ -6,7 +6,7 @@
 #    By: lgolino <lgolino@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 12:15:19 by lgolino           #+#    #+#              #
-#    Updated: 2023/01/27 15:22:25 by lgolino          ###   ########.fr        #
+#    Updated: 2023/02/02 12:26:25 by lgolino          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,13 +41,13 @@ SRC = ft_atoi.c \
 	  ft_toupper.c \
 	  ft_substr.c \
 	  ft_memset.c \
-	  #ft_putchar_fd.c \
-	  #ft_putendl_fd.c \
-	  #ft_putnbr_fd.c \
-	  #ft_putstr_fd.c \
-	  #ft_strmapi.c \
-	  #ft_striteri.c \
-	  #ft_itoa.c \
+	  ft_itoa.c \
+	  ft_putchar_fd.c \
+	  ft_putendl_fd.c \
+	  ft_putnbr_fd.c \
+	  ft_putstr_fd.c \
+	  ft_strmapi.c \
+	  ft_striteri.c \
 	  
 	  
 BONUS =	ft_lstnew.c \
@@ -60,19 +60,9 @@ BONUS =	ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 
-EXTRA = ft_recursive_factorial.c \
-		ft_recursive_power.c \
-		ft_sqrt.c \
-		ft_putchar.c \
-		ft_putendl.c \
-		ft_putnbr.c \
-		ft_putstr.c \
-
 OBJ = $(SRC:.c=.o)
 
 B_OBJ = $(BONUS:.c=.o)
-
-E_OBJ = $(EXTRA:.c=.o)
 
 all: $(NAME)
 
@@ -91,7 +81,6 @@ extra: $(OBJ) $(B_OBJ) $(E_OBJ)
 clean:
 	@rm -f $(OBJ)
 	@rm -f $(B_OBJ)
-	@rm -f $(E_OBJ)
 	@echo "OBJ deleted"
 
 fclean: clean
